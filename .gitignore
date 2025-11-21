@@ -33,3 +33,4 @@ go.work.sum
 
 examples/test*
 *.sys
+.idea/

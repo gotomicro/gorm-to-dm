@@ -1,0 +1,16 @@
+[dm.test]
+dialect = "dm"
+#dialect = "mysql"
+debug = true # ego重写gorm debug，打开后可以看到，配置名、地址、耗时、请求数据、响应数据
+#   rawDebug = true 原生gorm debug
+dsn = "test_dm:dmpassword@127.0.0.1:25236"
+onFail = "panic" # 失败后，直接fail fast，panic操作
+#   connMaxLifetime = "300s"
+#   maxIdleConns = 50
+#   maxOpenConns = 100
+#   disableTrace = false
+#   disableMetric = false
+#   enableDetailSQL = false
+#   enableAccessInterceptor = true
+#   enableAccessInterceptorReq = true
+#   enableAccessInterceptorRes = true

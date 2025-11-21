@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:5.7.37
+    ports:
+      - "23306:3306"
+    command: [
+      '--character-set-server=utf8mb4',
+      '--collation-server=utf8mb4_general_ci',
+      '--port=3306',
+    ]
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%'
+    volumes:
+      - "./data/mysql/data:/var/lib/mysql"           # 挂载数据目录
+      - "./data/mysql/config:/etc/mysql/conf.d"      # 挂载配置文件目录
+  dm:
+    image: toyangdon/dm:8-arm64
+    ports:
+      - "25236:5236"
+    volumes:
+      - "./data/dm/data:/home/dmdba/data"           # 挂载数据目录
+

@@ -14,6 +14,9 @@ func IsReservedWord(v string) bool {
 }
 
 func HasNumberPrefix(v string) bool {
+	if strings.Contains(v, "=") {
+		return false
+	}
 	for _, n := range NumberList {
 		if strings.HasPrefix(v, n) {
 			return true
